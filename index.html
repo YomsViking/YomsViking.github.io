@@ -33,26 +33,15 @@
 		
 	</div>
 
-
-	<script>
-		
-		const backButton = Telegram.WebApp.BackButton;
-	
-	if (window.location.search && window.location.pathname !== '/') {
-	
-	  backButton.show();
-	
-	} else {
-	
-	  backButton.hide(); 
-	
-	}
-	backButton.onClick(() => {
-		  history.back();
-		});
-	
-	  </script>
-
+var BackButton = WebApp.BackButton;
+BackButton.show();
+BackButton.onClick(function() {
+    WebApp.showAlert("BackButton clicked");
+    BackButton.hide();
+});
+WebApp.onEvent('backButtonClicked', function() {
+    ...
+});
 	
 </body>
 </html>
