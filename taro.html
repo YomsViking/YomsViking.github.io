@@ -51,7 +51,15 @@
 	</div>
 	<!-- container -->
     
-	
+var BackButton = WebApp.BackButton;
+BackButton.show();
+BackButton.onClick(function() {
+    WebApp.showAlert("BackButton clicked");
+    BackButton.hide();
+});
+WebApp.onEvent('backButtonClicked', function() {
+    ...
+});
 
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
