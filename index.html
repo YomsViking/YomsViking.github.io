@@ -5,36 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oracle</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Oracle</h1>
-        <div class="grid">
-            <a href="page1.html" class="item">
+        <h1 id="title">Oracle</h1>
+        <div class="grid" id="mainGrid">
+            <div class="item" onclick="openPage(1)">
                 <img src="icon1.png" alt="name1">
                 <p>name1</p>
-            </a>
-            <a href="page2.html" class="item">
+            </div>
+            <div class="item" onclick="openPage(2)">
                 <img src="icon2.png" alt="name2">
                 <p>name2</p>
-            </a>
-            <a href="page3.html" class="item">
+            </div>
+            <div class="item" onclick="openPage(3)">
                 <img src="icon3.png" alt="name3">
                 <p>name3</p>
-            </a>
-            <a href="page4.html" class="item">
+            </div>
+            <div class="item" onclick="openPage(4)">
                 <img src="icon4.png" alt="name4">
                 <p>name4</p>
-            </a>
-            <a href="page5.html" class="item">
+            </div>
+            <div class="item" onclick="openPage(5)">
                 <img src="icon5.png" alt="name5">
                 <p>name5</p>
-            </a>
-            <a href="page6.html" class="item">
+            </div>
+            <div class="item" onclick="openPage(6)">
                 <img src="icon6.png" alt="name6">
                 <p>name6</p>
-            </a>
+            </div>
+        </div>
+        <div id="content" style="display: none;">
+            <h2 id="contentTitle"></h2>
+            <p id="contentText"></p>
+            <button onclick="goBack()">Назад</button>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
