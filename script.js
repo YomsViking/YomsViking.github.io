@@ -1,27 +1,64 @@
+let tg = window.Telegram.WebApp;
+tg.expand();
+
+const services = [
+    { id: 1, title: "Нумерология", desc: "Расчет числа судьбы", img: "icon1.png" },
+    { id: 2, title: "Астрология", desc: "Прогноз на месяц", img: "icon2.png" },
+    { id: 3, title: "Таро", desc: "Расклад на отношения", img: "icon3.png" },
+    { id: 4, title: "Гадание на кофейной гуще", desc: "Ответ на один вопрос", img: "icon4.png" },
+    { id: 5, title: "Human Design", desc: "Разбор профиля", img: "icon5.png" }
+];
+
+function renderServices() {
+    let grid = document.getElementById("mainGrid");
+    grid.innerHTML = "";
+    services.forEach(service => {
+        let item = document.createElement("div");
+        item.className = "item";
+        item.innerHTML = <img src="${service.img}" alt="${service.title}"><p>${service.title}</p>;
+        item.onclick = () => openPage(service.id);
+        grid.appendChild(item);
+    });
+}
+renderServices();
+
 function openPage(id) {
-    // Данные для каждой страницы
-    const pages = {
-        1: { title: "Страница 1", text: "Это содержимое для name1." },
-        2: { title: "Страница 2", text: "Это содержимое для name2." },
-        3: { title: "Страница 3", text: "Это содержимое для name3." },
-        4: { title: "Страница 4", text: "Это содержимое для name4." },
-        5: { title: "Страница 5", text: "Это содержимое для name5." },
-        6: { title: "Страница 6", text: "Это содержимое для name6." },
-    };
-
-    // Обновляем контент
-    document.getElementById("contentTitle").innerText = pages[id].title;
-    document.getElementById("contentText").innerText = pages[id].text;
-
-    // Показываем контент и скрываем главную сетку
+    let service = services.find(s => s.id === id);
+    document.getElementById("contentTitle").innerText = service.title;
+    document.getElementById("contentText").innerText = service.desc;
+    document.getElementById("content").classList.add("show");
     document.getElementById("mainGrid").style.display = "none";
-    document.getElementById("title").style.display = "none";
-    document.getElementById("content").style.display = "block";
 }
 
 function goBack() {
-    // Показываем главную сетку и скрываем контент
-    document.getElementById("mainGrid").style.display = "grid";
-    document.getElementById("title").style.display = "block";
-    document.getElementById("content").style.display = "none";
+    document.getElementById("content").classList.remove("show");
+    setTimeout(() => {
+        document.getElementById("mainGrid").style.display = "grid";
+    }, 300);
 }
+
+// Обработчик кнопки "Назад"
+document.getElementById("backButton").addEventListener("click", goBack);
+
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let orderData = {
+        user_id: tg.initDataUnsafe?.user?.id || "unknown",
+        name: document.getElementById("name").value,
+        birthdate: document.getElementById("birthdate").value,
+        extraInfo: document.getElementById("extraInfo").value,
+        service: document.getElementById("contentTitle").innerText
+    };
+
+    fetch("https://your-backend.com/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(orderData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Заявка отправлена!");
+        tg.close();
+    });
+});
