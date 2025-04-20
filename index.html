@@ -3,32 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Эзотерические услуги</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>Наши Услуги</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="mainGrid"></div>
 
-    <div id="content" class="hidden">
-        <h2 id="contentTitle"></h2>
-        <p id="contentText"></p>
+    <header>
+        <h1>Добро пожаловать в наш WebApp!</h1>
+        <p>Выберите услугу, чтобы продолжить.</p>
+    </header>
 
-        <form id="orderForm">
-            <label>Ваше имя:</label>
-            <input type="text" id="name" required>
+    <main>
+        <section class="services">
+            <div class="service">
+                <h2>Нумерология</h2>
+                <button onclick="window.location.href='/numerology'">Подробнее</button>
+            </div>
 
-            <label>Дата рождения:</label>
-            <input type="date" id="birthdate" required>
+            <div class="service">
+                <h2>Астрология</h2>
+                <button onclick="window.location.href='/astrology'">Подробнее</button>
+            </div>
 
-            <label>Доп. информация:</label>
-            <textarea id="extraInfo"></textarea>
+            <div class="service">
+                <h2>Таро</h2>
+                <button onclick="window.location.href='/tarot'">Подробнее</button>
+            </div>
 
-            <button type="submit">Отправить заявку</button>
-        </form>
+            <div class="service">
+                <h2>Гадание на кофе</h2>
+                <button onclick="window.location.href='/coffee'">Подробнее</button>
+            </div>
 
-        <button id="backButton">Назад</button>
-    </div>
+            <div class="service">
+                <h2>Human Design</h2>
+                <button onclick="window.location.href='/human_design'">Подробнее</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Наши Услуги</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
