@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Астрология — AstroWay</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="tabs.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Астрология</h1>
+    <p>Выберите подкатегорию</p>
+  </header>
+
+  <main>
+    <div class="tabs">
+      <button class="tab active" data-tab="natal">Натальная карта</button>
+      <button class="tab" data-tab="compat">Совместимость</button>
+      <button class="tab" data-tab="forecast">Прогноз</button>
+    </div>
+
+    <div class="tab-content">
+      <div id="natal" class="tab-pane active">
+        <h2>Натальная карта</h2>
+        <p>Анализ личности по дате и времени рождения.</p>
+      </div>
+      <div id="compat" class="tab-pane">
+        <h2>Совместимость</h2>
+        <p>Проверка совместимости по знакам зодиака.</p>
+      </div>
+      <div id="forecast" class="tab-pane">
+        <h2>Астропрогноз</h2>
+        <p>Прогноз на месяц или год по вашей карте.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
