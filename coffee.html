@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Гадание на кофе — AstroWay</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
-    <h1>Гадание на кофе</h1>
+    <div class="header-top">
+      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+      <div>
+        <h1>Гадание на кофе</h1>
+        <p>Выберите подкатегорию услуги гадания на кофе</p>
+      </div>
+    </div>
   </header>
 
   <main>
-    <h2 class="category-title">Гадание на кофе</h2>
-
-    <section class="services-list">
+    <section class="services">
       <div class="service expandable">
         <div class="service-header">
           <span>Общий прогноз</span>
@@ -54,6 +59,16 @@
           <p>Знаки, на которые стоит обратить внимание, и полезные советы.</p>
         </div>
       </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Ответ на вопрос</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Ответ на конкретный вопрос, требующий ясности или совета.</p>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -62,7 +77,7 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.expandable').forEach(item => {
+    document.querySelectorAll('.expandable').forEach((item) => {
       item.addEventListener('click', () => {
         item.classList.toggle('open');
       });
