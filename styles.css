@@ -114,3 +114,9 @@ footer {
     margin: 0 auto;
   }
 }
+
+/* Убираем подчеркивания и цвета у ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
