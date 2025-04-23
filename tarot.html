@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Таро — AstroWay</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+      <div>
+        <h1>AstroWay</h1>
+        <p>Выберите подкатегорию услуги Таро</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="services">
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Общий расклад на будущее</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Карты покажут, какие важные события и тенденции ждут вас в ближайшее время.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Любовный расклад</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Углублённый взгляд на вашу личную жизнь, чувства партнёра и перспективы отношений.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Финансовый расклад</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Расклад поможет оценить текущую финансовую ситуацию и наметить пути улучшения.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Ответ на вопрос</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Быстрый и точный ответ на конкретный вопрос, требующий ясности или совета.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Расклад на ситуацию</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Анализ конкретной жизненной ситуации, её причин и возможных вариантов развития.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 AstroWay. Все права защищены.
+  </footer>
+
+  <script>
+    document.querySelectorAll('.expandable').forEach((item) => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
