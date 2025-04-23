@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Нумерология — AstroWay</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+      <div>
+        <h1>AstroWay</h1>
+        <p>Выберите подкатегорию нумерологической услуги</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="services">
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Анализ даты рождения</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Позволяет узнать ключевые черты личности, скрытые таланты и жизненные задачи на основе даты рождения.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Совместимость</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Анализирует числовые вибрации двух людей и определяет их совместимость в любви, семье и делах.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Нумерологический прогноз</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Прогноз на ближайший период, основанный на текущем жизненном цикле и персональных числах.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Расчет финансового потенциала</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Определение финансовых возможностей и денежных каналов через нумерологию.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Подбор имени</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Выбор гармоничного имени для ребенка или взрослого с учетом вибраций и значений чисел.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 AstroWay. Все права защищены.
+  </footer>
+
+  <script>
+    document.querySelectorAll('.expandable').forEach((item) => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
