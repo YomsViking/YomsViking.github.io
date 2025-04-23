@@ -3,37 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>Астрология — AstroWay</title>
+  <title>AstroWay — Астрология</title>
   <link rel="stylesheet" href="styles.css" />
-  <script defer src="tabs.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-M7S3lFQeLh1FGI/t0FQWZbYMbYx6+htRKNFPLfW1xscEz94I9vMXiHNdOmKz3E/Mk5yUcNayhE3SldE6uV1URQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>Астрология</h1>
-    <p>Выберите подкатегорию</p>
+    <h1>AstroWay</h1>
+    <p>Выберите подкатегорию астрологической услуги</p>
   </header>
 
   <main>
-    <div class="tabs">
-      <button class="tab active" data-tab="natal">Натальная карта</button>
-      <button class="tab" data-tab="compat">Совместимость</button>
-      <button class="tab" data-tab="forecast">Прогноз</button>
-    </div>
+    <section class="services">
+      <div class="service expandable">
+        <div class="service-header">
+          <i class="fas fa-map"></i>
+          <span>Натальная карта</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Персональная карта рождения, раскрывающая особенности характера, сильные и слабые стороны, а также жизненный путь.</p>
+        </div>
+      </div>
 
-    <div class="tab-content">
-      <div id="natal" class="tab-pane active">
-        <h2>Натальная карта</h2>
-        <p>Анализ личности по дате и времени рождения.</p>
+      <div class="service expandable">
+        <div class="service-header">
+          <i class="fas fa-chart-line"></i>
+          <span>Астропрогноз</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Прогноз на ближайший месяц или год, основанный на транзитах планет, чтобы вы могли лучше подготовиться к ключевым событиям.</p>
+        </div>
       </div>
-      <div id="compat" class="tab-pane">
-        <h2>Совместимость</h2>
-        <p>Проверка совместимости по знакам зодиака.</p>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <i class="fas fa-heart"></i>
+          <span>Совместимость</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Анализ совместимости с партнером по натальным картам, выявление точек притяжения и потенциальных конфликтов.</p>
+        </div>
       </div>
-      <div id="forecast" class="tab-pane">
-        <h2>Астропрогноз</h2>
-        <p>Прогноз на месяц или год по вашей карте.</p>
-      </div>
-    </div>
+    </section>
   </main>
+
+  <footer>
+    © 2025 AstroWay. Все права защищены.
+  </footer>
 </body>
 </html>
