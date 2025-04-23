@@ -12,91 +12,54 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-  <div class="header-top">
-    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
-    <h1>AstroWay</h1>
-  </div>
-  <p>Выберите подкатегорию астрологической услуги</p>
+    <div class="header-top">
+      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+      <h1>AstroWay</h1>
+    </div>
+    <p>Выберите подкатегорию астрологической услуги</p>
   </header>
 
   <main>
     <section class="services">
-
-      <div class="service expandable">
-        <div class="service-header">
-          <i class="fas fa-map"></i>
-          <span>Натальная карта</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Персональная карта рождения, раскрывающая особенности характера, сильные и слабые стороны, а также жизненный путь.</p>
+      <div class="subcategory">
+        <div class="subcategory-title">Персональный гороскоп</div>
+        <div class="subcategory-content">
+          <p>Анализ индивидуальной натальной карты, выявление сильных и слабых сторон, прогноз по важным сферам жизни.</p>
         </div>
       </div>
 
-      <div class="service expandable">
-        <div class="service-header">
-          <i class="fas fa-user-astronaut"></i>
-          <span>Персональный гороскоп</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Подробный астрологический прогноз, составленный специально для вас на основе даты, времени и места рождения.</p>
+      <div class="subcategory">
+        <div class="subcategory-title">Кармическая астрология</div>
+        <div class="subcategory-content">
+          <p>Исследование прошлых воплощений и их влияния на текущее воплощение, задач души и кармических узлов.</p>
         </div>
       </div>
 
-      <div class="service expandable">
-        <div class="service-header">
-          <i class="fas fa-history"></i>
-          <span>Кармическая астрология</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Узнайте о влиянии прошлых жизней на вашу судьбу и предназначение в текущем воплощении.</p>
+      <div class="subcategory">
+        <div class="subcategory-title">Выбор благоприятных дат</div>
+        <div class="subcategory-content">
+          <p>Подбор наиболее удачного времени для важных событий: свадьбы, переезда, начала проектов и др.</p>
         </div>
       </div>
-
-      <div class="service expandable">
-        <div class="service-header">
-          <i class="fas fa-calendar-alt"></i>
-          <span>Выбор благоприятных дат</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Определение самых подходящих дат для важных событий: свадьба, переезд, запуск проекта и др.</p>
-        </div>
-      </div>
-
-      <div class="service expandable">
-        <div class="service-header">
-          <i class="fas fa-chart-line"></i>
-          <span>Астропрогноз</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Прогноз на ближайший месяц или год, основанный на транзитах планет, чтобы вы могли лучше подготовиться к ключевым событиям.</p>
-        </div>
-      </div>
-
-      <div class="service expandable">
-        <div class="service-header">
-          <i class="fas fa-heart"></i>
-          <span>Совместимость</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Анализ совместимости с партнёром по натальным картам, выявление точек притяжения и потенциальных конфликтов.</p>
-        </div>
-      </div>
-
     </section>
   </main>
 
   <footer>
     © 2025 AstroWay. Все права защищены.
   </footer>
+
+  <script>
+    const titles = document.querySelectorAll('.subcategory-title');
+    titles.forEach(title => {
+      title.addEventListener('click', () => {
+        title.classList.toggle('active');
+        const content = title.nextElementSibling;
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+      });
+    });
+  </script>
 </body>
 </html>
