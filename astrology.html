@@ -5,43 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>AstroWay — Астрология</title>
   <link rel="stylesheet" href="styles.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-M7S3lFQeLh1FGI/t0FQWZbYMbYx6+htRKNFPLfW1xscEz94I9vMXiHNdOmKz3E/Mk5yUcNayhE3SldE6uV1URQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
     <div class="header-top">
       <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
-      <h1>AstroWay</h1>
+      <div>
+        <h1>AstroWay</h1>
+        <p>Выберите подкатегорию астрологической услуги</p>
+      </div>
     </div>
-    <p>Выберите подкатегорию астрологической услуги</p>
   </header>
 
   <main>
     <section class="services">
-      <div class="subcategory">
-        <div class="subcategory-title">Персональный гороскоп</div>
-        <div class="subcategory-content">
-          <p>Анализ индивидуальной натальной карты, выявление сильных и слабых сторон, прогноз по важным сферам жизни.</p>
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Персональный гороскоп</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Анализ вашей натальной карты, рекомендации на ближайшее время и ключевые акценты вашей личности.</p>
         </div>
       </div>
 
-      <div class="subcategory">
-        <div class="subcategory-title">Кармическая астрология</div>
-        <div class="subcategory-content">
-          <p>Исследование прошлых воплощений и их влияния на текущее воплощение, задач души и кармических узлов.</p>
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Кармическая астрология</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Погружение в прошлые жизни, анализ задач текущего воплощения и ключевые кармические уроки.</p>
         </div>
       </div>
 
-      <div class="subcategory">
-        <div class="subcategory-title">Выбор благоприятных дат</div>
-        <div class="subcategory-content">
-          <p>Подбор наиболее удачного времени для важных событий: свадьбы, переезда, начала проектов и др.</p>
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Выбор благоприятных дат</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Анализ транзитов для подбора наиболее подходящего времени для важных дел и начинаний.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Астропрогноз</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Прогноз на ближайший месяц или год с акцентом на важные события и периоды.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Натальная карта</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Детальный разбор вашей натальной карты: планеты, аспекты, знаки и дома.</p>
+        </div>
+      </div>
+
+      <div class="service expandable">
+        <div class="service-header">
+          <span>Совместимость</span>
+          <i class="fas fa-chevron-down arrow"></i>
+        </div>
+        <div class="service-content">
+          <p>Сравнение карт двух людей, выявление гармонии и потенциальных точек конфликта.</p>
         </div>
       </div>
     </section>
@@ -52,12 +87,9 @@
   </footer>
 
   <script>
-    const titles = document.querySelectorAll('.subcategory-title');
-    titles.forEach(title => {
-      title.addEventListener('click', () => {
-        title.classList.toggle('active');
-        const content = title.nextElementSibling;
-        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+    document.querySelectorAll('.expandable').forEach(service => {
+      service.addEventListener('click', () => {
+        service.classList.toggle('open');
       });
     });
   </script>
