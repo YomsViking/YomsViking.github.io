@@ -13,12 +13,31 @@ body {
 header {
   text-align: center;
   padding: 20px 10px 10px;
+  position: relative;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 10px;
+}
+
+.back-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  z-index: 10;
 }
 
 header h1 {
   margin: 0;
   font-size: 24px;
   color: #f9a826;
+  width: 100%;
 }
 
 header p {
@@ -58,7 +77,6 @@ header p {
   font-weight: 500;
 }
 
-/* Анимация нажатия */
 .service:hover {
   background-color: #2c2c45;
   transform: scale(1.02);
@@ -67,6 +85,54 @@ header p {
 .service:active {
   background-color: #38385c;
   transform: scale(0.98);
+}
+
+/* Подкатегории */
+.subcategory {
+  background-color: #1d1d2b;
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.subcategory:hover {
+  background-color: #27273a;
+}
+
+.subcategory-title {
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+}
+
+.subcategory-title::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+}
+
+.subcategory-title.active::after {
+  transform: rotate(180deg);
+}
+
+.subcategory-content {
+  background-color: #2c2c3d;
+  border-radius: 8px;
+  margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.subcategory-content p {
+  margin: 0;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #ddd;
 }
 
 /* Подвал */
@@ -81,113 +147,7 @@ footer {
 /* Адаптивность */
 @media (min-width: 600px) {
   .services {
-    max-width: 400px;
+    max-width: 420px;
     margin: 0 auto;
   }
-}
-
-/* Раскрывающиеся подкатегории */
-.expandable .service-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  cursor: pointer;
-}
-
-.expandable .arrow {
-  margin-left: auto;
-  transition: transform 0.3s ease;
-}
-
-.service-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  padding: 0 0;
-  font-size: 14px;
-  color: #ccc;
-}
-
-.service.open .service-content {
-  max-height: 200px;
-  padding: 12px 2px 0 34px;
-}
-
-.service.open .arrow {
-  transform: rotate(180deg);
-}
-
-.back-button {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  color: #fff;
-  font-size: 20px;
-  text-decoration: none;
-  z-index: 10;
-}
-
-.expandable {
-  border-radius: 12px;
-  background: #1d1d2b;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-  transition: background 0.3s ease;
-}
-
-.expandable:hover {
-  background: #262636;
-}
-
-.service-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  cursor: pointer;
-}
-
-.service-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  padding: 0 0;
-  background-color: #2c2c3d;
-  margin-top: 10px;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #ddd;
-}
-
-.service-content p {
-  padding: 10px 14px;
-}
-
-.service.open .service-content {
-  max-height: 300px;
-  padding: 10px 0;
-}
-
-.service .arrow {
-  margin-left: auto;
-  transition: transform 0.3s ease;
-}
-
-.service.open .arrow {
-  transform: rotate(180deg);
-}
-
-.header-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-left: 10px;
-  position: relative;
-}
-
-.back-button {
-  color: #fff;
-  font-size: 20px;
-  text-decoration: none;
 }
