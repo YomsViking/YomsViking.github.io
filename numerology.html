@@ -5,70 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Нумерология — AstroWay</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
   <header>
-    <div class="header-top">
-      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
-      <div>
-        <h1>Нумерология</h1>
-        <p>Выберите подкатегорию нумерологической услуги</p>
-      </div>
-    </div>
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+    <h1>Нумерология</h1>
+    <p>Выберите подкатегорию</p>
   </header>
 
   <main>
     <section class="services">
-      <div class="service expandable">
+
+      <div class="service expandable" onclick="toggleService(this)">
         <div class="service-header">
+          <i class="fas fa-calendar-day"></i>
           <span>Анализ даты рождения</span>
           <i class="fas fa-chevron-down arrow"></i>
         </div>
         <div class="service-content">
-          <p>Позволяет узнать ключевые черты личности, скрытые таланты и жизненные задачи на основе даты рождения.</p>
+          <p>Раскрытие характера, судьбы и жизненного пути через анализ вашей даты рождения.</p>
         </div>
       </div>
 
-      <div class="service expandable">
+      <div class="service expandable" onclick="toggleService(this)">
         <div class="service-header">
+          <i class="fas fa-heart"></i>
           <span>Совместимость</span>
           <i class="fas fa-chevron-down arrow"></i>
         </div>
         <div class="service-content">
-          <p>Анализирует числовые вибрации двух людей и определяет их совместимость в любви, семье и делах.</p>
+          <p>Сравнительный нумерологический анализ пар и личных отношений.</p>
         </div>
       </div>
 
-      <div class="service expandable">
+      <div class="service expandable" onclick="toggleService(this)">
         <div class="service-header">
+          <i class="fas fa-chart-line"></i>
           <span>Нумерологический прогноз</span>
           <i class="fas fa-chevron-down arrow"></i>
         </div>
         <div class="service-content">
-          <p>Прогноз на ближайший период, основанный на текущем жизненном цикле и персональных числах.</p>
+          <p>Предсказание событий и тенденций ближайшего будущего по нумерологическим циклам.</p>
         </div>
       </div>
 
-      <div class="service expandable">
+      <div class="service expandable" onclick="toggleService(this)">
         <div class="service-header">
+          <i class="fas fa-coins"></i>
           <span>Расчет финансового потенциала</span>
           <i class="fas fa-chevron-down arrow"></i>
         </div>
         <div class="service-content">
-          <p>Определение финансовых возможностей и денежных каналов через нумерологию.</p>
+          <p>Оценка денежной кармы, потенциала заработка и подходящих стратегий.</p>
         </div>
       </div>
 
-      <div class="service expandable">
+      <div class="service expandable" onclick="toggleService(this)">
         <div class="service-header">
+          <i class="fas fa-user-edit"></i>
           <span>Подбор имени</span>
           <i class="fas fa-chevron-down arrow"></i>
         </div>
         <div class="service-content">
-          <p>Выбор гармоничного имени для ребенка или взрослого с учетом вибраций и значений чисел.</p>
+          <p>Выбор благоприятного имени для ребенка или смены имени по нумерологии.</p>
         </div>
       </div>
+
     </section>
   </main>
 
@@ -77,11 +85,9 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.expandable').forEach((item) => {
-      item.addEventListener('click', () => {
-        item.classList.toggle('open');
-      });
-    });
+    function toggleService(element) {
+      element.classList.toggle('open');
+    }
   </script>
 </body>
 </html>
