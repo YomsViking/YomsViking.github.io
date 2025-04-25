@@ -1,3 +1,4 @@
+/* Основные стили */
 body {
   margin: 0;
   padding: 0;
@@ -11,14 +12,7 @@ body {
 
 header {
   text-align: center;
-  padding: 20px 10px 10px;
-  position: relative;
-}
-
-.top-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 40px 10px 10px;
   position: relative;
 }
 
@@ -28,22 +22,19 @@ header h1 {
   color: #f9a826;
 }
 
-.label-aw {
-  position: absolute;
-  right: 10px;
-  top: 0;
-  background-color: #f9a826;
-  color: #0e0e1a;
-  font-weight: bold;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
 header p {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   font-size: 14px;
   color: #cccccc;
+}
+
+.back-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: #ffffff;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .services {
@@ -54,14 +45,11 @@ header p {
 }
 
 .service {
-  display: flex;
-  align-items: center;
-  gap: 14px;
   background-color: #1c1c2e;
   border-radius: 12px;
-  cursor: pointer;
   padding: 14px 18px;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .service:hover {
@@ -69,20 +57,42 @@ header p {
   transform: scale(1.01);
 }
 
-.service:active {
-  background-color: #38385c;
-  transform: scale(0.97);
-}
-
-.service i {
-  font-size: 18px;
-  color: #f9a826;
-  width: 24px;
-}
-
-.service span {
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 16px;
   font-weight: 500;
+}
+
+.service-header i {
+  color: #f9a826;
+  font-size: 18px;
+}
+
+.arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.service.open .arrow {
+  transform: rotate(180deg);
+}
+
+.service-content {
+  max-height: 0;
+  overflow: hidden;
+  background-color: #2c2c3d;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 0;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  color: #ddd;
+}
+
+.service.open .service-content {
+  max-height: 300px;
+  padding: 10px 14px;
 }
 
 footer {
@@ -95,7 +105,7 @@ footer {
 
 @media (min-width: 600px) {
   .services {
-    max-width: 400px;
+    max-width: 420px;
     margin: 0 auto;
   }
 }
