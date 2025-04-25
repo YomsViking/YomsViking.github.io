@@ -3,80 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>AstroWay — Астрология</title>
+  <title>Астрология — AstroWay</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
   <header>
-    <div class="header-top">
-      <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
-      <div>
-        <h1>Астрология</h1>
-        <p>Выберите подкатегорию астрологической услуги</p>
-      </div>
-    </div>
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+    <h1>Астрология</h1>
+    <p>Выберите подкатегорию</p>
   </header>
 
   <main>
     <section class="services">
-      <div class="service expandable">
+      <div class="service expandable" onclick="toggleService(this)">
         <div class="service-header">
+          <i class="fas fa-user-astronaut"></i>
           <span>Персональный гороскоп</span>
           <i class="fas fa-chevron-down arrow"></i>
         </div>
         <div class="service-content">
-          <p>Анализ вашей натальной карты, рекомендации на ближайшее время и ключевые акценты вашей личности.</p>
+          <p>Глубокий анализ вашей натальной карты и астрологических показателей личности.</p>
         </div>
       </div>
 
-      <div class="service expandable">
+      <div class="service expandable" onclick="toggleService(this)">
         <div class="service-header">
+          <i class="fas fa-hourglass-half"></i>
           <span>Кармическая астрология</span>
           <i class="fas fa-chevron-down arrow"></i>
         </div>
         <div class="service-content">
-          <p>Погружение в прошлые жизни, анализ задач текущего воплощения и ключевые кармические уроки.</p>
+          <p>Раскрытие уроков прошлого воплощения и задач текущей жизни.</p>
         </div>
       </div>
 
-      <div class="service expandable">
+      <div class="service expandable" onclick="toggleService(this)">
         <div class="service-header">
+          <i class="fas fa-calendar-alt"></i>
           <span>Выбор благоприятных дат</span>
           <i class="fas fa-chevron-down arrow"></i>
         </div>
         <div class="service-content">
-          <p>Анализ транзитов для подбора наиболее подходящего времени для важных дел и начинаний.</p>
-        </div>
-      </div>
-
-      <div class="service expandable">
-        <div class="service-header">
-          <span>Астропрогноз</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Прогноз на ближайший месяц или год с акцентом на важные события и периоды.</p>
-        </div>
-      </div>
-
-      <div class="service expandable">
-        <div class="service-header">
-          <span>Натальная карта</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Детальный разбор вашей натальной карты: планеты, аспекты, знаки и дома.</p>
-        </div>
-      </div>
-
-      <div class="service expandable">
-        <div class="service-header">
-          <span>Совместимость</span>
-          <i class="fas fa-chevron-down arrow"></i>
-        </div>
-        <div class="service-content">
-          <p>Сравнение карт двух людей, выявление гармонии и потенциальных точек конфликта.</p>
+          <p>Выбор наилучших дней для важных событий: свадьба, сделки, переезд и др.</p>
         </div>
       </div>
     </section>
@@ -87,11 +61,9 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.expandable').forEach(service => {
-      service.addEventListener('click', () => {
-        service.classList.toggle('open');
-      });
-    });
+    function toggleService(element) {
+      element.classList.toggle('open');
+    }
   </script>
 </body>
 </html>
