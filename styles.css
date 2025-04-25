@@ -9,14 +9,13 @@ body {
   min-height: 100vh;
 }
 
-/* Header */
 header {
+  text-align: center;
   padding: 20px 10px 10px;
   position: relative;
-  text-align: center;
 }
 
-.header-top {
+.top-bar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,26 +28,24 @@ header h1 {
   color: #f9a826;
 }
 
-.aw-label {
+.label-aw {
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 0;
-  font-size: 14px;
   background-color: #f9a826;
   color: #0e0e1a;
-  padding: 4px 8px;
-  border-radius: 8px;
   font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
 }
 
-/* Subtitle */
 header p {
   margin: 6px 0 0;
   font-size: 14px;
   color: #cccccc;
 }
 
-/* Services */
 .services {
   display: flex;
   flex-direction: column;
@@ -59,19 +56,28 @@ header p {
 .service {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 14px 18px;
+  gap: 14px;
   background-color: #1c1c2e;
   border-radius: 12px;
   cursor: pointer;
+  padding: 14px 18px;
   transition: background-color 0.25s ease, transform 0.2s ease;
-  text-decoration: none;
-  color: inherit;
+}
+
+.service:hover {
+  background-color: #2c2c45;
+  transform: scale(1.01);
+}
+
+.service:active {
+  background-color: #38385c;
+  transform: scale(0.97);
 }
 
 .service i {
-  font-size: 20px;
+  font-size: 18px;
   color: #f9a826;
+  width: 24px;
 }
 
 .service span {
@@ -79,17 +85,6 @@ header p {
   font-weight: 500;
 }
 
-.service:hover {
-  background-color: #2c2c45;
-  transform: scale(1.02);
-}
-
-.service:active {
-  background-color: #38385c;
-  transform: scale(0.98);
-}
-
-/* Footer */
 footer {
   text-align: center;
   padding: 16px;
@@ -98,7 +93,6 @@ footer {
   margin-top: auto;
 }
 
-/* Responsive */
 @media (min-width: 600px) {
   .services {
     max-width: 400px;
@@ -106,7 +100,7 @@ footer {
   }
 }
 
-/* Links */
+/* Убираем подчеркивания и цвета у ссылок */
 a {
   text-decoration: none;
   color: inherit;
