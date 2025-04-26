@@ -5,34 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Анализ даты рождения — AstroWay</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
   <header>
     <a href="numerology.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
     <h1>Анализ даты рождения</h1>
-    <p>Введите свои данные для оформления услуги</p>
+    <p>Заполните данные для оформления</p>
   </header>
 
   <main>
-    <section class="service-details">
-      <h2>Что вы получите:</h2>
-      <p>Подробный анализ вашей даты рождения, раскрытие сильных сторон, жизненной миссии и советов по самореализации.</p>
+    <section class="service-form">
+      <div class="service-description">
+        <p>Получите глубокий анализ вашей даты рождения, раскрывающий личные качества, сильные стороны и предназначение.</p>
+        <p class="price">Цена: <strong>2500 ₽</strong></p>
+      </div>
 
-      <h2>Стоимость:</h2>
-      <p><strong>1 500 ₽</strong></p>
-
-      <form class="order-form">
-        <label for="fullName">Ваше имя:</label>
-        <input type="text" id="fullName" name="fullName" required />
+      <form action="#" method="post" class="form">
+        <label for="fullName">Ваше полное имя:</label>
+        <input type="text" id="fullName" name="fullName" required>
 
         <label for="birthDate">Дата рождения:</label>
-        <input type="date" id="birthDate" name="birthDate" required />
+        <input type="date" id="birthDate" name="birthDate" required>
 
-        <label for="email">Email для отправки результата:</label>
-        <input type="email" id="email" name="email" required />
+        <label for="comment">Комментарий (необязательно):</label>
+        <textarea id="comment" name="comment" rows="4"></textarea>
 
-        <button type="submit" class="order-button">Перейти к оплате</button>
+        <button type="submit" class="order-button">Оплатить и отправить запрос</button>
       </form>
     </section>
   </main>
