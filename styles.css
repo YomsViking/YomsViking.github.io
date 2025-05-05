@@ -1,267 +1,92 @@
-/* Основные стили */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0e0e1a;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+/* ... (существующий CSS выше без изменений) ... */
 
 header {
   text-align: center;
-  padding: 40px 10px 10px;
+  padding: 40px 10px 20px;
   position: relative;
+  background-color: #1c1c2e;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 28px;
   color: #f9a826;
 }
 
 header p {
-  margin: 8px 0 0;
-  font-size: 14px;
-  color: #cccccc;
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: #bbbbbb;
 }
 
-.back-button {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  color: #ffffff;
-  font-size: 20px;
-  text-decoration: none;
-}
-
+/* Главный блок с карточками услуг */
 .services {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 20px;
+  gap: 16px;
+  padding: 24px 20px;
 }
 
+/* Карточка услуги */
 .service {
   background-color: #1c1c2e;
-  border-radius: 12px;
-  padding: 14px 18px;
+  border-radius: 20px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .service:hover {
+  transform: translateY(-2px);
   background-color: #2c2c45;
-  transform: scale(1.01);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 .service-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 16px;
-  font-weight: 500;
+  gap: 14px;
+  flex-grow: 1;
 }
 
 .service-header i {
+  font-size: 20px;
   color: #f9a826;
+}
+
+.service span {
   font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
 }
 
-.arrow {
-  margin-left: auto;
-  transition: transform 0.3s ease;
+/* Иконка стрелки */
+.service > i.fas.fa-chevron-right {
+  font-size: 18px;
+  color: #888;
 }
 
-.service.open .arrow {
-  transform: rotate(180deg);
-}
-
-.service-content {
-  max-height: 0;
-  overflow: hidden;
-  background-color: #2c2c3d;
-  margin-top: 10px;
-  border-radius: 8px;
-  padding: 0;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  color: #ddd;
-}
-
-.service.open .service-content {
-  max-height: 300px;
-  padding: 10px 14px;
-}
-
+/* Footer */
 footer {
   text-align: center;
-  padding: 16px;
+  padding: 20px;
   font-size: 12px;
   color: #888;
+  background-color: #0e0e1a;
+  border-top: 1px solid #2c2c45;
   margin-top: auto;
 }
 
+/* Адаптив */
 @media (min-width: 600px) {
   .services {
     max-width: 420px;
     margin: 0 auto;
   }
-}
-
-/* Убираем подчеркивания и цвета у ссылок */
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.order-section {
-  background-color: #1c1c2e;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px;
-}
-
-.order-section h2 {
-  font-size: 20px;
-  color: #f9a826;
-  margin-bottom: 10px;
-}
-
-.order-description {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #ccc;
-}
-
-.order-price {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-.order-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.order-form label {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.order-form input {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  background-color: #2c2c3d;
-  color: #fff;
-}
-
-.order-form input::placeholder {
-  color: #888;
-}
-
-.submit-button {
-  margin-top: 20px;
-  padding: 12px;
-  background-color: #f9a826;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  color: #0e0e1a;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-  background-color: #e69500;
-}
-
-.subcategory {
-  background-color: #2c2c3d;
-  padding: 10px 14px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.order-button {
-  background-color: #f9a826;
-  padding: 6px 12px;
-  border-radius: 6px;
-  color: #0e0e1a;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-}
-
-.order-button:hover {
-  background-color: #e69500;
-}
-
-.service-details {
-  background-color: #1c1c2e;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  color: #ffffff;
-}
-
-.service-details h2 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #f9a826;
-}
-
-.order-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.order-form input {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: #2c2c45;
-  color: #ffffff;
-}
-
-.order-form input::placeholder {
-  color: #aaaaaa;
-}
-
-.order-form input:focus {
-  outline: 2px solid #f9a826;
-}
-
-.service-detail {
-  padding: 20px;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.details-button, .order-button {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 18px;
-  background-color: #f9a826;
-  color: #0e0e1a;
-  border-radius: 8px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.details-button:hover, .order-button:hover {
-  background-color: #e6951c;
 }
