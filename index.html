@@ -2,150 +2,24 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AstroWay</title>
   <link rel="stylesheet" href="styles.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #F2EFE5;
-      color: #2e2e2e;
-    }
-
-    header {
-      padding: 40px 20px 20px;
-      text-align: center;
-      background-color: #E3E1D9;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-      font-weight: 700;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #555;
-    }
-
-    main {
-      padding: 30px 20px;
-    }
-
-    .services {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .service {
-      background-color: #ffffff;
-      border-radius: 20px;
-      padding: 16px 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .service:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-    }
-
-    .service i {
-      font-size: 20px;
-      color: #B4B4B8;
-    }
-
-    .service-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-grow: 1;
-    }
-
-    .service span {
-      font-size: 18px;
-      font-weight: 500;
-      flex-grow: 1;
-    }
-
-    footer {
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #888;
-    }
-  </style>
 </head>
 <body>
   <header>
     <h1>AstroWay</h1>
-    <p>Выберите интересующую вас категорию</p>
+    <p>ВЫБЕРИТЕ<br>КАТЕГОРИЮ</p>
   </header>
 
   <main>
-    <section class="services">
-
-      <div class="service" onclick="location.href='numerology.html'">
-        <div class="service-header">
-          <i class="fas fa-sort-numeric-up-alt"></i>
-          <span>Нумерология</span>
-        </div>
-        <i class="fas fa-chevron-right"></i>
-      </div>
-
-      <div class="service" onclick="location.href='astrology.html'">
-        <div class="service-header">
-          <i class="fas fa-star"></i>
-          <span>Астрология</span>
-        </div>
-        <i class="fas fa-chevron-right"></i>
-      </div>
-
-      <div class="service" onclick="location.href='tarot.html'">
-        <div class="service-header">
-          <i class="fas fa-clone"></i>
-          <span>Таро</span>
-        </div>
-        <i class="fas fa-chevron-right"></i>
-      </div>
-
-      <div class="service" onclick="location.href='coffee.html'">
-        <div class="service-header">
-          <i class="fas fa-mug-hot"></i>
-          <span>Гадание на кофе</span>
-        </div>
-        <i class="fas fa-chevron-right"></i>
-      </div>
-
-      <div class="service" onclick="location.href='humandesign.html'">
-        <div class="service-header">
-          <i class="fas fa-dna"></i>
-          <span>Human Design</span>
-        </div>
-        <i class="fas fa-chevron-right"></i>
-      </div>
-
+    <section class="category-grid">
+      <div class="circle" onclick="location.href='numerology.html'">Нумерология</div>
+      <div class="circle" onclick="location.href='astrology.html'">Астрология</div>
+      <div class="circle" onclick="location.href='tarot.html'">Таро</div>
+      <div class="circle" onclick="location.href='coffee.html'">Гадание<br>на кофе</div>
+      <div class="circle" onclick="location.href='humandesign.html'"><i>Human<br>Design</i></div>
     </section>
   </main>
-
-  <footer>
-    © 2025 AstroWay. Все права защищены.
-  </footer>
 </body>
 </html>
