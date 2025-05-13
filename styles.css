@@ -1,92 +1,62 @@
-/* ... (существующий CSS выше без изменений) ... */
+/* Основной фон */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
 
+/* Шапка */
 header {
+  background-color: #eae6df;
+  padding: 40px 20px 20px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
   text-align: center;
-  padding: 40px 10px 20px;
-  position: relative;
-  background-color: #1c1c2e;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 28px;
-  color: #f9a826;
+  font-size: 36px;
+  color: #aaa;
+  font-style: italic;
+  font-weight: normal;
 }
 
 header p {
-  margin: 10px 0 0;
+  margin-top: 20px;
   font-size: 16px;
-  color: #bbbbbb;
+  color: #aaa;
+  font-style: italic;
+  text-align: left;
 }
 
-/* Главный блок с карточками услуг */
-.services {
+/* Сетка категорий */
+.category-grid {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 20px;
+  gap: 20px;
 }
 
-/* Карточка услуги */
-.service {
-  background-color: #1c1c2e;
-  border-radius: 20px;
-  padding: 16px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.service:hover {
-  transform: translateY(-2px);
-  background-color: #2c2c45;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-}
-
-.service-header {
+/* Круглая кнопка */
+.circle {
+  width: 140px;
+  height: 140px;
+  background-color: #eae6df;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex-grow: 1;
-}
-
-.service-header i {
-  font-size: 20px;
-  color: #f9a826;
-}
-
-.service span {
-  font-size: 18px;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-/* Иконка стрелки */
-.service > i.fas.fa-chevron-right {
-  font-size: 18px;
-  color: #888;
-}
-
-/* Footer */
-footer {
+  justify-content: center;
   text-align: center;
-  padding: 20px;
-  font-size: 12px;
-  color: #888;
-  background-color: #0e0e1a;
-  border-top: 1px solid #2c2c45;
-  margin-top: auto;
+  font-size: 18px;
+  color: #111;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-/* Адаптив */
-@media (min-width: 600px) {
-  .services {
-    max-width: 420px;
-    margin: 0 auto;
-  }
+.circle:hover {
+  transform: scale(1.05);
 }
