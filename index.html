@@ -2,22 +2,36 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AstroWay</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
+        :root {
+            --tg-theme-bg-color: #e9e5df;
+            --tg-theme-text-color: #000000;
+            --tg-theme-button-color: #e3ded7;
+            --tg-theme-button-text-color: #000000;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Times New Roman', serif;
-            background-color: #e9e5df;
+            font-family: 'Roboto', 'Arial', sans-serif;
+            background-color: var(--tg-theme-bg-color, #e9e5df);
             min-height: 100vh;
             overflow-x: hidden;
+            color: var(--tg-theme-text-color, #000000);
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .container {
             position: relative;
             width: 100%;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .top-curve {
@@ -25,68 +39,74 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 250px;
+            height: 180px;
             background-color: #e3ded7;
-            border-bottom-right-radius: 50% 30%;
+            border-bottom-right-radius: 50% 25%;
             z-index: 0;
         }
 
         .header {
             position: relative;
-            padding: 40px 0;
+            padding: 30px 0 20px;
             text-align: center;
             z-index: 1;
+            width: 100%;
         }
 
         .logo {
-            font-size: 46px;
+            font-size: 38px;
             color: #a9a9a9;
             font-style: italic;
             letter-spacing: 2px;
         }
 
         .category-title {
-            padding: 20px;
+            padding: 15px 10px;
             color: #a9a9a9;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 18px;
+            font-size: 16px;
             text-align: center;
+            margin-bottom: 10px;
+            font-weight: 500;
+            z-index: 1;
         }
 
         .categories {
             position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 10px;
             z-index: 1;
+            width: 90%;
+            max-width: 400px;
         }
 
         .category {
-            position: relative;
-            width: 180px;
-            height: 180px;
-            background-color: #e3ded7;
+            aspect-ratio: 1/1;
+            background-color: var(--tg-theme-button-color, #e3ded7);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            position: relative;
+            user-select: none;
         }
 
-        .category:hover {
-            transform: scale(1.05);
+        .category:active {
+            transform: scale(0.95);
             background-color: #dbd6cf;
         }
 
         .category-text {
             text-align: center;
-            font-size: 20px;
-            padding: 10px;
+            font-size: 18px;
+            padding: 5px;
             font-style: italic;
+            color: var(--tg-theme-button-text-color, #000000);
         }
 
         .category-text.coffee {
@@ -97,7 +117,72 @@
             font-style: italic;
             line-height: 1.2;
         }
+
+        /* Для совсем маленьких экранов */
+        @media (max-width: 320px) {
+            .categories {
+                gap: 10px;
+                width: 95%;
+            }
+            
+            .category-text {
+                font-size: 16px;
+            }
+            
+            .logo {
+                font-size: 34px;
+            }
+        }
+        
+        /* Для больших мобильных устройств */
+        @media (min-width: 480px) {
+            .categories {
+                width: 85%;
+                max-width: 450px;
+            }
+            
+            .logo {
+                font-size: 42px;
+            }
+        }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация Telegram Web App
+            if (window.Telegram && window.Telegram.WebApp) {
+                const tg = window.Telegram.WebApp;
+                tg.expand(); // Расширяем на весь экран
+                tg.ready(); // Сообщаем что приложение готово
+                
+                // Получаем данные из Telegram
+                if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+                    console.log('Telegram user:', tg.initDataUnsafe.user);
+                }
+                
+                // Настраиваем цвета в соответствии с темой Telegram
+                document.documentElement.style.setProperty('--tg-theme-bg-color', tg.themeParams.bg_color || '#e9e5df');
+                document.documentElement.style.setProperty('--tg-theme-text-color', tg.themeParams.text_color || '#000000');
+                document.documentElement.style.setProperty('--tg-theme-button-color', tg.themeParams.button_color || '#e3ded7');
+                document.documentElement.style.setProperty('--tg-theme-button-text-color', tg.themeParams.button_text_color || '#000000');
+            }
+            
+            // Обработчики событий для категорий
+            document.querySelectorAll('.category').forEach(category => {
+                category.addEventListener('click', function() {
+                    const categoryName = this.getAttribute('data-category');
+                    console.log('Selected category:', categoryName);
+                    
+                    // Отправка данных в Telegram бот
+                    if (window.Telegram && window.Telegram.WebApp) {
+                        window.Telegram.WebApp.sendData(JSON.stringify({
+                            action: 'select_category',
+                            category: categoryName
+                        }));
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -107,19 +192,19 @@
         </div>
         <div class="category-title">ВЫБЕРИТЕ КАТЕГОРИЮ</div>
         <div class="categories">
-            <div class="category" style="top: 0; left: -40px;">
+            <div class="category" data-category="numerology">
                 <div class="category-text">Нумерология</div>
             </div>
-            <div class="category" style="top: -20px; right: -60px;">
+            <div class="category" data-category="astrology">
                 <div class="category-text">Астрология</div>
             </div>
-            <div class="category" style="top: 20px; left: -20px;">
+            <div class="category" data-category="tarot">
                 <div class="category-text">Таро</div>
             </div>
-            <div class="category" style="top: 0; right: -20px;">
+            <div class="category" data-category="coffee">
                 <div class="category-text coffee">Гадание<br>на<br>кофе</div>
             </div>
-            <div class="category" style="top: 10px; left: 20px;">
+            <div class="category" data-category="humandesign" style="grid-column: span 2; width: 50%; margin: 0 auto;">
                 <div class="human-design">Human<br>Design</div>
             </div>
         </div>
