@@ -1,26 +1,60 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AstroWay</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="header">
-    <h1>AstroWay</h1>
-  </div>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f5f4f3;
+  color: #1c1c1c;
+}
 
-  <div class="content">
-    <div class="subheading">ВЫБЕРИТЕ<br>КАТЕГОРИЮ</div>
+.header {
+  background-color: #eae6df;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  padding: 40px 20px 60px;
+  text-align: center;
+}
 
-    <div class="buttons">
-      <div class="circle">Нумерология</div>
-      <div class="circle">Астрология</div>
-      <div class="circle">Таро</div>
-      <div class="circle">Гадание<br>на кофе</div>
-      <div class="circle italic">Human<br>Design</div>
-    </div>
-  </div>
-</body>
-</html>
+.header h1 {
+  font-size: 36px;
+  font-style: italic;
+  color: #999;
+  margin: 0;
+}
+
+.content {
+  padding: 20px;
+  position: relative;
+}
+
+.subheading {
+  font-size: 16px;
+  font-style: italic;
+  color: #999;
+  margin-left: 16px;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.circle {
+  background-color: #eae6df;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.circle.italic {
+  font-style: italic;
+}
