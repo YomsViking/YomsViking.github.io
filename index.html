@@ -6,21 +6,13 @@
     <title>AstroWay</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        :root {
-            --tg-theme-bg-color: #e9e5df;
-            --tg-theme-text-color: #000000;
-            --tg-theme-button-color: #e3ded7;
-            --tg-theme-button-text-color: #000000;
-        }
-
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', 'Arial', sans-serif;
-            background-color: var(--tg-theme-bg-color, #e9e5df);
+            font-family: 'Times New Roman', serif;
+            background-color: #1A1A2E; /* Глубокий темно-синий вместо черного */
             min-height: 100vh;
             overflow-x: hidden;
-            color: var(--tg-theme-text-color, #000000);
             touch-action: manipulation;
             -webkit-tap-highlight-color: transparent;
         }
@@ -34,79 +26,87 @@
             align-items: center;
         }
 
-        .top-curve {
+        .top-area {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 180px;
-            background-color: #e3ded7;
-            border-bottom-right-radius: 50% 25%;
+            height: 40%;
+            background: linear-gradient(to bottom, #9B8ACA, #7A699E); /* Градиент от лавандового к темно-лавандовому */
+            border-bottom-right-radius: 30% 20%;
+            border-bottom-left-radius: 30% 20%;
             z-index: 0;
         }
 
         .header {
             position: relative;
-            padding: 30px 0 20px;
+            padding: 40px 0 20px;
             text-align: center;
             z-index: 1;
             width: 100%;
         }
 
         .logo {
-            font-size: 38px;
-            color: #a9a9a9;
+            font-size: 46px;
+            color: #D4AF37; /* Приглушенное золото для логотипа */
             font-style: italic;
             letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .category-title {
-            padding: 15px 10px;
-            color: #a9a9a9;
+            padding: 10px;
+            color: #F0EAD6; /* Сливочный цвет для заголовка */
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 16px;
+            letter-spacing: 2px;
+            font-size: 18px;
             text-align: center;
-            margin-bottom: 10px;
-            font-weight: 500;
+            font-weight: normal;
             z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .categories {
             position: relative;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 10px;
+            gap: 20px;
+            padding: 15px;
             z-index: 1;
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
         }
 
         .category {
             aspect-ratio: 1/1;
-            background-color: var(--tg-theme-button-color, #e3ded7);
+            background-color: #F0EAD6; /* Сливочный цвет для кнопок */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: transform 0.2s ease, background-color 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
             position: relative;
             user-select: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .category:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .category:active {
             transform: scale(0.95);
-            background-color: #dbd6cf;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .category-text {
             text-align: center;
-            font-size: 18px;
+            font-size: 20px;
             padding: 5px;
             font-style: italic;
-            color: var(--tg-theme-button-text-color, #000000);
+            color: #1A1A2E; /* Темно-синий цвет для текста кнопок */
         }
 
         .category-text.coffee {
@@ -118,32 +118,57 @@
             line-height: 1.2;
         }
 
-        /* Для совсем маленьких экранов */
-        @media (max-width: 320px) {
+        /* Human Design занимает центральную позицию внизу */
+        .category-humandesign {
+            grid-column: span 2;
+            width: 70%;
+            margin: 0 auto;
+            background-color: #5F9EA0; /* Мягкий бирюзовый для выделения */
+        }
+        
+        .category-humandesign .human-design {
+            color: #F0EAD6; /* Сливочный цвет для текста на бирюзовом фоне */
+        }
+        
+        /* Для маленьких экранов */
+        @media (max-width: 360px) {
             .categories {
-                gap: 10px;
-                width: 95%;
+                gap: 15px;
             }
             
             .category-text {
-                font-size: 16px;
+                font-size: 18px;
             }
             
             .logo {
-                font-size: 34px;
+                font-size: 40px;
+            }
+            
+            .category-humandesign {
+                width: 60%;
             }
         }
         
-        /* Для больших мобильных устройств */
-        @media (min-width: 480px) {
-            .categories {
-                width: 85%;
-                max-width: 450px;
+        /* Для больших экранов */
+        @media (min-width: 500px) {
+            .logo {
+                font-size: 52px;
             }
             
-            .logo {
-                font-size: 42px;
+            .category-text {
+                font-size: 22px;
             }
+        }
+
+        /* Добавляем тонкую мерцающую анимацию для логотипа - эффект "магического сияния" */
+        @keyframes soft-glow {
+            0% { text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+            50% { text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+        }
+
+        .logo {
+            animation: soft-glow 3s infinite ease-in-out;
         }
     </style>
     <script>
@@ -153,17 +178,6 @@
                 const tg = window.Telegram.WebApp;
                 tg.expand(); // Расширяем на весь экран
                 tg.ready(); // Сообщаем что приложение готово
-                
-                // Получаем данные из Telegram
-                if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
-                    console.log('Telegram user:', tg.initDataUnsafe.user);
-                }
-                
-                // Настраиваем цвета в соответствии с темой Telegram
-                document.documentElement.style.setProperty('--tg-theme-bg-color', tg.themeParams.bg_color || '#e9e5df');
-                document.documentElement.style.setProperty('--tg-theme-text-color', tg.themeParams.text_color || '#000000');
-                document.documentElement.style.setProperty('--tg-theme-button-color', tg.themeParams.button_color || '#e3ded7');
-                document.documentElement.style.setProperty('--tg-theme-button-text-color', tg.themeParams.button_text_color || '#000000');
             }
             
             // Обработчики событий для категорий
@@ -171,6 +185,15 @@
                 category.addEventListener('click', function() {
                     const categoryName = this.getAttribute('data-category');
                     console.log('Selected category:', categoryName);
+                    
+                    // Эффект нажатия
+                    this.style.transform = 'scale(0.92)';
+                    this.style.boxShadow = '0 2px 3px rgba(0,0,0,0.2)';
+                    
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        this.style.boxShadow = '';
+                    }, 150);
                     
                     // Отправка данных в Telegram бот
                     if (window.Telegram && window.Telegram.WebApp) {
@@ -186,7 +209,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="top-curve"></div>
+        <div class="top-area"></div>
         <div class="header">
             <div class="logo">AstroWay</div>
         </div>
@@ -204,7 +227,7 @@
             <div class="category" data-category="coffee">
                 <div class="category-text coffee">Гадание<br>на<br>кофе</div>
             </div>
-            <div class="category" data-category="humandesign" style="grid-column: span 2; width: 50%; margin: 0 auto;">
+            <div class="category category-humandesign" data-category="humandesign">
                 <div class="human-design">Human<br>Design</div>
             </div>
         </div>
