@@ -11,39 +11,40 @@
     <h1>AstroWay</h1>
   </header>
 
-  <main>
-    <p class="category-label">Выберите категорию</p>
+  <div class="category-label">Выберите категорию</div>
 
-    <div class="category-button" onclick="selectCategory('astrology')">
-      <span>Астрология</span>
-      <img src="astrology.svg" alt="Иконка астрологии" />
-    </div>
+  <button class="category-button" onclick="selectCategory('astrology')">
+    Астрология
+    <img src="astrology.png" alt="Астрология" />
+  </button>
 
-    <div class="category-button" onclick="selectCategory('numerology')">
-      <span>Нумерология</span>
-      <img src="numerology.svg" alt="Иконка нумерологии" />
-    </div>
+  <button class="category-button" onclick="selectCategory('numerology')">
+    Нумерология
+    <img src="numerology.png" alt="Нумерология" />
+  </button>
 
-    <div class="category-button" onclick="selectCategory('tarot')">
-      <span>Таро</span>
-      <img src="tarot.svg" alt="Иконка Таро" />
-    </div>
+  <button class="category-button" onclick="selectCategory('tarot')">
+    Таро
+    <img src="tarot.png" alt="Таро" />
+  </button>
 
-    <div class="category-button" onclick="selectCategory('coffee')">
-      <span>Гадание на кофе</span>
-      <img src="coffee.svg" alt="Иконка кофе" />
-    </div>
+  <button class="category-button" onclick="selectCategory('coffee')">
+    Гадание на кофе
+    <img src="coffee.png" alt="Кофе" />
+  </button>
 
-    <div class="category-button" onclick="selectCategory('human-design')">
-      <span>Дизайн человека</span>
-       <img src="human-disign.svg" alt="Иконка Дизайн человека" />
-    </div>
-  </main>
+  <button class="category-button" onclick="selectCategory('human')">
+    Дизайн человека
+    <img src="human.png" alt="Дизайн человека" />
+  </button>
 
-  <footer>
-    <p>&copy; 2025 AstroWay</p>
-  </footer>
+  <footer>© 2025 AstroWay</footer>
 
-  <script src="script.js"></script>
+  <script>
+    function selectCategory(category) {
+      console.log("Выбрана категория:", category);
+      // В будущем: window.location.href = /${category}.html;
+    }
+  </script>
 </body>
 </html>
