@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AstroWay</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
+
     <header>
       <h1>AstroWay</h1>
     </header>
 
-    <h2 class="subtitle">Выберите категорию</h2>
+    <div class="subtitle">Выберите категорию</div>
 
     <div class="button-list">
       <button class="category-button" onclick="selectCategory('astrology')">
-        <span>Астрология</span>
-        <img src="astrology.png" alt="Астрология" />
+        Астрология
+        <img src="astrology.png" alt="Астрология">
       </button>
-
       <button class="category-button" onclick="selectCategory('numerology')">
-        <span>Нумерология</span>
-        <img src="numerology.png" alt="Нумерология" />
+        Нумерология
+        <img src="numerology.png" alt="Нумерология">
       </button>
-
       <button class="category-button" onclick="selectCategory('tarot')">
-        <span>Таро</span>
-        <img src="tarot.png" alt="Таро" />
+        Таро
+        <img src="tarot.png" alt="Таро">
       </button>
-
       <button class="category-button" onclick="selectCategory('coffee')">
-        <span>Гадание на кофе</span>
-        <img src="coffee.png" alt="Кофе" />
+        Гадание на кофе
+        <img src="coffee.png" alt="Кофе">
       </button>
-
-      <button class="category-button" onclick="selectCategory('humandesign')">
-        <span>Дизайн человека</span>
-        <img src="human.png" alt="Дизайн человека" />
+      <button class="category-button" onclick="selectCategory('human-design')">
+        Дизайн человека
+        <img src="human.png" alt="Дизайн человека">
       </button>
     </div>
 
-    <footer>
-      <p>© 2025 AstroWay</p>
-    </footer>
+    <footer>© 2025 AstroWay</footer>
+
   </div>
 
-  <script>
-    function selectCategory(category) {
-      // Здесь будет логика перехода, например:
-      // window.location.href = category + ".html";
-      alert("Вы выбрали: " + category);
-    }
-  </script>
 </body>
 </html>
