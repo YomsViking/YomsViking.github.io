@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: "Segoe UI", sans-serif;
   background-color: #f6f8ff;
-  color: #222;
+  color: #1e1e2f;
 }
 
 .container {
@@ -12,31 +12,30 @@ body {
   padding: 20px 16px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
+/* Шапка */
 header h1 {
   font-size: 2rem;
   font-weight: 600;
   border: 1px solid #ddd;
   border-radius: 20px;
-  padding: 10px;
+  padding: 12px;
   background-color: #ffffff;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .subtitle {
   font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
+/* Кнопки */
 .button-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .category-button {
@@ -44,21 +43,23 @@ header h1 {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  border: 1.5px solid #222;
-  border-radius: 14px;
-  padding: 14px 20px;
-  font-size: 1.1rem;
+  border: 2px solid #3c4cad;
+  border-radius: 16px;
+  padding: 18px 22px;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  color: #1e1e2f;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  width: 100%;
 }
 
 .category-button:hover {
-  background-color: #e8ecff;
+  background-color: #e3e8ff;
 }
 
 .category-button img {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   margin-left: 15px;
 }
 
