@@ -4,87 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AstroWay</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Georgia', serif;
-      background-color: #f5f4f3;
-      color: #1c1c1c;
-    }
-
-    .header {
-      background-color: #eae6df;
-      border-bottom-right-radius: 120px;
-      border-bottom-left-radius: 0;
-      padding: 60px 20px 80px;
-      text-align: center;
-      position: relative;
-    }
-
-    .header h1 {
-      font-size: 42px;
-      font-style: italic;
-      color: #aaa;
-      margin: 0;
-    }
-
-    .content {
-      padding: 20px 24px 40px;
-    }
-
-    .subheading {
-      font-size: 15px;
-      font-style: italic;
-      color: #aaa;
-      margin-left: 6px;
-      margin-bottom: 30px;
-      line-height: 1.4;
-      text-transform: uppercase;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px 28px;
-    }
-
-    .circle {
-      background-color: #eae6df;
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 17px;
-      padding: 10px;
-      line-height: 1.3;
-      font-weight: 500;
-    }
-
-    .circle.italic {
-      font-style: italic;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="header">
+  <header>
     <h1>AstroWay</h1>
-  </div>
+  </header>
 
-  <div class="content">
-    <div class="subheading">ВЫБЕРИТЕ<br>КАТЕГОРИЮ</div>
+  <main>
+    <p class="category-label">Выберите категорию</p>
 
-    <div class="buttons">
-      <div class="circle">Нумерология</div>
-      <div class="circle">Астрология</div>
-      <div class="circle">Таро</div>
-      <div class="circle">Гадание<br>на кофе</div>
-      <div class="circle italic">Human<br>Design</div>
+    <div class="category-button" onclick="selectCategory('astrology')">
+      <span>Астрология</span>
+      <img src="icons/astrology.svg" alt="Иконка астрологии" />
     </div>
-  </div>
+
+    <div class="category-button" onclick="selectCategory('numerology')">
+      <span>Нумерология</span>
+      <img src="icons/numerology.svg" alt="Иконка нумерологии" />
+    </div>
+
+    <div class="category-button" onclick="selectCategory('tarot')">
+      <span>Таро</span>
+      <img src="icons/tarot.svg" alt="Иконка Таро" />
+    </div>
+
+    <div class="category-button" onclick="selectCategory('coffee')">
+      <span>Гадание на кофе</span>
+      <img src="icons/coffee.svg" alt="Иконка кофе" />
+    </div>
+
+    <div class="category-button" onclick="selectCategory('human-design')">
+      <span>Дизайн человека</span>
+      <!-- Можно вставить иконку позже -->
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AstroWay</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
