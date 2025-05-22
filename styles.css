@@ -1,44 +1,59 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
   margin: 0;
   padding: 0;
-  color: #111;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f6f8ff;
+  color: #222;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 16px;
 }
 
 header {
-  background-color: #ffffff;
-  border-radius: 0 0 30px 30px;
   text-align: center;
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
 }
 
-h1 {
-  margin: 0;
+header h1 {
   font-size: 2rem;
+  font-weight: 600;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #ffffff;
 }
 
-.category-label {
-  margin: 20px;
+.subtitle {
   font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 16px;
   text-align: center;
+}
+
+.button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .category-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1.5px solid #222;
   border-radius: 14px;
-  margin: 10px auto;
   padding: 14px 20px;
-  width: 90%;
-  max-width: 400px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease;
+}
+
+.category-button:hover {
+  background-color: #e8ecff;
 }
 
 .category-button img {
@@ -47,38 +62,9 @@ h1 {
   margin-left: 15px;
 }
 
-.category-button:hover {
-  background-color: #f4f4f4;
-}
-
 footer {
+  margin-top: 40px;
   text-align: center;
-  padding: 20px 10px;
   font-size: 0.9rem;
-  color: #777;
-}
-
-/* Адаптация под мобильные экраны */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  .category-label {
-    font-size: 1.1rem;
-  }
-
-  .category-button {
-    font-size: 1rem;
-    padding: 12px 16px;
-  }
-
-  .category-button img {
-    width: 24px;
-    height: 24px;
-  }
-
-  footer {
-    font-size: 0.8rem;
-  }
+  color: #555;
 }
