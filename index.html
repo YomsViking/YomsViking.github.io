@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AstroWay</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
+  <header>
     <h1>AstroWay</h1>
+    <p>Выберите категорию</p>
   </header>
 
   <main>
-    <p class="subtitle">Выберите категорию</p>
+    <button class="category-btn" onclick="goToCategory('astrology')">
+      <span>Астрология</span>
+      <img src="icons/astrology.png" alt="Астрология">
+    </button>
 
-    <div class="button-container">
-      <button class="category-button" onclick="location.href='#'">
-        <span>Астрология</span>
-        <img src="astro.png" alt="Астрология">
-      </button>
+    <button class="category-btn" onclick="goToCategory('numerology')">
+      <span>Нумерология</span>
+      <img src="icons/numerology.png" alt="Нумерология">
+    </button>
 
-      <button class="category-button" onclick="location.href='#'">
-        <span>Нумерология</span>
-        <img src="number.png" alt="Нумерология">
-      </button>
+    <button class="category-btn" onclick="goToCategory('tarot')">
+      <span>Таро</span>
+      <img src="icons/tarot.png" alt="Таро">
+    </button>
 
-      <button class="category-button" onclick="location.href='#'">
-        <span>Таро</span>
-        <img src="taro.png" alt="Таро">
-      </button>
+    <button class="category-btn" onclick="goToCategory('coffee')">
+      <span>Гадание на кофе</span>
+      <img src="icons/coffee.png" alt="Гадание на кофе">
+    </button>
 
-      <button class="category-button" onclick="location.href='#'">
-        <span>Гадание на кофе</span>
-        <img src="coffee.png" alt="Кофе">
-      </button>
-
-      <button class="category-button" onclick="location.href='#'">
-        <span>Дизайн человека</span>
-        <img src="human.png" alt="Дизайн человека">
-      </button>
-    </div>
+    <button class="category-btn" onclick="goToCategory('human')">
+      <span>Дизайн человека</span>
+      <img src="icons/human.png" alt="Дизайн человека">
+    </button>
   </main>
 
   <footer>
-    <p class="copyright">© 2025 AstroWay</p>
+    <p>© 2025 AstroWay</p>
   </footer>
+
+  <script>
+    function goToCategory(category) {
+      // Пока просто переход по URL — позже заменим на переход по роутингу Telegram
+      window.location.href = category + ".html";
+    }
+  </script>
 </body>
 </html>
