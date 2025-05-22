@@ -2,51 +2,48 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AstroWay</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <header class="header">
+    <h1>AstroWay</h1>
+  </header>
 
-    <header>
-      <h1>AstroWay</h1>
-    </header>
+  <main>
+    <p class="subtitle">Выберите категорию</p>
 
-    <div class="subtitle">Выберите категорию</div>
+    <div class="button-container">
+      <button class="category-button" onclick="location.href='#'">
+        <span>Астрология</span>
+        <img src="astro.png" alt="Астрология">
+      </button>
 
-    <div class="button-list">
-      <button class="category-button" onclick="selectCategory('astrology')">
-        Астрология
-        <img src="astrology.png" alt="Астрология">
+      <button class="category-button" onclick="location.href='#'">
+        <span>Нумерология</span>
+        <img src="number.png" alt="Нумерология">
       </button>
-      <button class="category-button" onclick="selectCategory('numerology')">
-        Нумерология
-        <img src="numerology.png" alt="Нумерология">
+
+      <button class="category-button" onclick="location.href='#'">
+        <span>Таро</span>
+        <img src="taro.png" alt="Таро">
       </button>
-      <button class="category-button" onclick="selectCategory('tarot')">
-        Таро
-        <img src="tarot.png" alt="Таро">
-      </button>
-      <button class="category-button" onclick="selectCategory('coffee')">
-        Гадание на кофе
+
+      <button class="category-button" onclick="location.href='#'">
+        <span>Гадание на кофе</span>
         <img src="coffee.png" alt="Кофе">
       </button>
-      <button class="category-button" onclick="selectCategory('human-design')">
-        Дизайн человека
-        <img src="design.png" alt="Дизайн человека">
+
+      <button class="category-button" onclick="location.href='#'">
+        <span>Дизайн человека</span>
+        <img src="human.png" alt="Дизайн человека">
       </button>
     </div>
+  </main>
 
-    <footer>© 2025 AstroWay</footer>
-
-  </div>
-
-  <script>
-    function selectCategory(category) {
-      alert("Вы выбрали: " + category);
-      // тут будет переход к следующему экрану
-    }
-  </script>
+  <footer>
+    <p class="copyright">© 2025 AstroWay</p>
+  </footer>
 </body>
 </html>
