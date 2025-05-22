@@ -7,43 +7,50 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>AstroWay</h1>
-  </header>
+  <div class="container">
+    <header>
+      <h1>AstroWay</h1>
+    </header>
 
-  <div class="category-label">Выберите категорию</div>
+    <h2 class="subtitle">Выберите категорию</h2>
 
-  <button class="category-button" onclick="selectCategory('astrology')">
-    Астрология
-    <img src="astrology.png" alt="Астрология" />
-  </button>
+    <div class="button-list">
+      <button class="category-button" onclick="selectCategory('astrology')">
+        <span>Астрология</span>
+        <img src="astrology.png" alt="Астрология" />
+      </button>
 
-  <button class="category-button" onclick="selectCategory('numerology')">
-    Нумерология
-    <img src="numerology.png" alt="Нумерология" />
-  </button>
+      <button class="category-button" onclick="selectCategory('numerology')">
+        <span>Нумерология</span>
+        <img src="numerology.png" alt="Нумерология" />
+      </button>
 
-  <button class="category-button" onclick="selectCategory('tarot')">
-    Таро
-    <img src="tarot.png" alt="Таро" />
-  </button>
+      <button class="category-button" onclick="selectCategory('tarot')">
+        <span>Таро</span>
+        <img src="tarot.png" alt="Таро" />
+      </button>
 
-  <button class="category-button" onclick="selectCategory('coffee')">
-    Гадание на кофе
-    <img src="coffee.png" alt="Кофе" />
-  </button>
+      <button class="category-button" onclick="selectCategory('coffee')">
+        <span>Гадание на кофе</span>
+        <img src="coffee.png" alt="Кофе" />
+      </button>
 
-  <button class="category-button" onclick="selectCategory('human')">
-    Дизайн человека
-    <img src="human.png" alt="Дизайн человека" />
-  </button>
+      <button class="category-button" onclick="selectCategory('humandesign')">
+        <span>Дизайн человека</span>
+        <img src="human.png" alt="Дизайн человека" />
+      </button>
+    </div>
 
-  <footer>© 2025 AstroWay</footer>
+    <footer>
+      <p>© 2025 AstroWay</p>
+    </footer>
+  </div>
 
   <script>
     function selectCategory(category) {
-      console.log("Выбрана категория:", category);
-      // В будущем: window.location.href = /${category}.html;
+      // Здесь будет логика перехода, например:
+      // window.location.href = category + ".html";
+      alert("Вы выбрали: " + category);
     }
   </script>
 </body>
