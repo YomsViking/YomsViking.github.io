@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Астрология</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header back-header">
+    <button class="back-button" onclick="history.back()">←</button>
+    <h1>Астрология</h1>
+  </header>
+
+  <main class="category-main">
+    <div class="category-icon">
+      <img src="icons/astrology.png" alt="Астрология" />
+    </div>
+
+    <div class="category-description">
+      <h2>Что вы хотите узнать?</h2>
+      <p>Выберите тему, чтобы получить персональную информацию.</p>
+    </div>
+
+    <div class="card-scroll-container">
+      <div class="card" onclick="location.href='final.html'">
+        <span>Натальная карта</span>
+      </div>
+      <div class="card" onclick="location.href='final.html'">
+        <span>Совместимость</span>
+      </div>
+      <div class="card" onclick="location.href='final.html'">
+        <span>Лунный день</span>
+      </div>
+      <div class="card" onclick="location.href='final.html'">
+        <span>Транзиты</span>
+      </div>
+      <div class="card" onclick="location.href='final.html'">
+        <span>Персональный гороскоп</span>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
