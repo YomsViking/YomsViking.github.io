@@ -40,7 +40,7 @@ body {
   background: #ffffff;
   border: 1px solid #ccc;
   border-radius: 16px;
-  padding: 14px 160px;
+  padding: 20px 200px;
   font-size: 17px;
   cursor: pointer;
   transition: background 0.2s ease;
@@ -71,9 +71,17 @@ body {
   height: 28px;
 }
 
+.footer-line {
+  width: 90%;
+  max-width: 400px;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 40px auto 1px; /* 40px сверху, 12px снизу (до футера) */
+}
+
 footer {
-  margin-top: auto;
-  padding: 20px;
+  text-align: center;
   font-size: 14px;
   color: #888;
+  padding: 12px 0;
 }
