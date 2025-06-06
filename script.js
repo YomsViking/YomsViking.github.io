@@ -1,5 +1,5 @@
-function selectCategory(category) {
-  console.log("Выбрана категория:", category);
-  // Здесь будет переход к следующей странице
-  // Например: window.location.href = category.html?type=${category};
+function handleClick(category) {
+  console.log(`Выбрана категория: ${category}`);
+  // Пример перехода — замени на свой путь или WebApp взаимодействие
+  // window.location.href = `/category/${category}`;
 }
