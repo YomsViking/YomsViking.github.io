@@ -41,7 +41,7 @@ h1, h2, p {
 .back-header h1 {
   flex: 1;
   text-align: center;
-  font-size: 18px;
+  font-size: 26px;
   margin: 0;
 }
 
@@ -56,8 +56,8 @@ h1, h2, p {
 
 /*правая иконка заголовка страниц  категорий */
 .header-icon img {
-  width: 28px;
-  height: 28px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
@@ -123,7 +123,7 @@ h1, h2, p {
 .category-description {
   text-align: center;
   margin-bottom: 24px;
-  padding: 0 16px;
+  padding: 20px 16px;
 }
 
 .category-description h2 {
@@ -161,8 +161,8 @@ h1, h2, p {
 }
 
 .image-card img {
-  width: 100%;
-  height: auto;
+  width: 300px;
+  height: 400px;
   display: block;
   object-fit: cover;
   border-radius: 16px;
