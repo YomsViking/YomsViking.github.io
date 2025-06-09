@@ -186,3 +186,28 @@ footer {
   color: #777;
   padding-bottom: 20px;
 }
+
+/* Swiper карусель */
+.swiper-container {
+  padding: 20px 0 40px;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide {
+  width: 250px;
+  height: auto;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+}
