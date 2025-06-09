@@ -7,38 +7,46 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header back-header">
+
+  <header class="back-header">
     <button class="back-button" onclick="history.back()">←</button>
     <h1>Астрология</h1>
   </header>
 
-  <main class="category-main">
-    <div class="category-icon">
-      <img src="icons/astrology.png" alt="Астрология" />
-    </div>
+  <div class="category-icon">
+    <img src="astrology.png" alt="Астрология">
+  </div>
 
-    <div class="category-description">
-      <h2>Что вы хотите узнать?</h2>
-      <p>Выберите тему, чтобы получить персональную информацию.</p>
-    </div>
+  <div class="category-description">
+    <h2>Выберите тему</h2>
+    <p>Откройте астрологические знания по нужной теме</p>
+  </div>
 
-    <div class="card-scroll-container">
-      <div class="card" onclick="location.href='final.html'">
-        <span>Натальная карта</span>
+  <div class="slider-wrapper">
+    <div class="slider-track">
+      <div class="slider-card image-card" onclick="location.href='final.html'">
+        <img src="card1.jpg" alt="Натальная карта">
       </div>
-      <div class="card" onclick="location.href='final.html'">
-        <span>Совместимость</span>
+      <div class="slider-card image-card" onclick="location.href='final.html'">
+        <img src="card2.jpg" alt="Совместимость">
       </div>
-      <div class="card" onclick="location.href='final.html'">
-        <span>Лунный день</span>
+      <div class="slider-card image-card" onclick="location.href='final.html'">
+        <img src="card3.jpg" alt="Кармическая задача">
       </div>
-      <div class="card" onclick="location.href='final.html'">
-        <span>Транзиты</span>
+      <div class="slider-card image-card" onclick="location.href='final.html'">
+        <img src="card4.jpg" alt="Профориентация">
       </div>
-      <div class="card" onclick="location.href='final.html'">
-        <span>Персональный гороскоп</span>
+      <div class="slider-card image-card" onclick="location.href='final.html'">
+        <img src="card5.jpg" alt="Лунный день">
       </div>
     </div>
-  </main>
+  </div>
+
+  <hr class="footer-line" />
+
+  <footer>
+    <p>© 2025 AstroWay</p>
+  </footer>
+
 </body>
 </html>
