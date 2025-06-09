@@ -28,6 +28,7 @@ h1, h2, p {
 .back-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 16px;
   border-bottom: 1px solid #ddd;
   background-color: #ffffff;
@@ -50,6 +51,14 @@ h1, h2, p {
   font-size: 20px;
   cursor: pointer;
   color: #000;
+  z-index: 1;
+}
+
+/*правая иконка заголовка страниц  категорий */
+.header-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 }
 
 /* Подзаголовок */
