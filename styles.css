@@ -189,7 +189,7 @@ footer {
 
 /* Swiper карусель */
 .swiper-container {
-  padding: 20px 0 40px;
+  padding: 20px 100px 40px;
 }
 
 .swiper-wrapper {
@@ -206,8 +206,8 @@ footer {
 }
 
 .swiper-slide img {
-  width: 100%;
-  height: 100%;
+  width: 180px;
+  height: 240px;
   object-fit: cover;
   border-radius: 16px;
 }
