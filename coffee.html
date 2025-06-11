@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Гадание на кофе</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+</head>
+<body>
+
+  <header class="back-header">
+    <button class="back-button" onclick="history.back()">←</button>
+    <h1>Гадание на кофе</h1>
+    <div class="header-icon">
+      <img src="coffee.png" alt="Гадание на кофе" />
+    </div>
+  </header>
+  
+  <div class="category-description">
+    <h2>Выберите тему</h2>
+    <p>здесь будет описание</p>
+  </div>
+
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" onclick="location.href='final.html'">
+        <img src="card1.jpg" alt="Натальная карта" />
+      </div>
+      <div class="swiper-slide" onclick="location.href='final.html'">
+        <img src="card2.jpg" alt="Совместимость" />
+      </div>
+      <div class="swiper-slide" onclick="location.href='final.html'">
+        <img src="card3.jpg" alt="Кармическая задача" />
+      </div>
+      <div class="swiper-slide" onclick="location.href='final.html'">
+        <img src="card4.jpg" alt="Профориентация" />
+      </div>
+      <div class="swiper-slide" onclick="location.href='final.html'">
+        <img src="card5.jpg" alt="Лунный день" />
+      </div>
+    </div>
+  </div>
+
+  <hr class="footer-line" />
+  <footer>
+    <p>© 2025 AstroWay</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 16,
+      grabCursor: true,
+      loop: true,
+      effect: 'coverflow',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: false,
+      },
+    });
+  </script>
+</body>
+</html>
