@@ -1,0 +1,30 @@
+/* Стили для кнопки "Заказать" */
+.order-button {
+  display: block;
+  margin: 24px auto;
+  background-color: black;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  width: calc(100% - 48px);
+  max-width: 400px;
+}
+
+/* Контейнер описания подуслуги */
+.subservice-content {
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Общий текст под ценой */
+.subservice-notes {
+  margin: 0 20px;
+  font-size: 16px;
+}
