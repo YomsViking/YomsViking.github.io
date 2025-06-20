@@ -7,10 +7,20 @@ body {
 }
 
 .back-header {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 16px 20px 0;
   background-color: #fff;
+}
+
+.back-header h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
 }
 
 .back-button {
@@ -25,7 +35,6 @@ h1 {
   font-size: 24px;
   font-weight: bold;
   margin: 0;
-  text-align: center;
 }
 
 .subservice-content {
