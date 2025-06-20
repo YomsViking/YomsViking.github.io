@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Расклад на отношения</title>
+  <link rel="stylesheet" href="subservice.css" />
+</head>
+<body>
+
+  <header class="back-header">
+    <button class="back-button" onclick="history.back()">←</button>
+    <h1>Расклад на отношения</h1>
+  </header>
+
+  <div class="subservice-content">
+    <div class="description-block">
+      <ul>
+        <li>Анализ текущих отношений или их перспектив</li>
+        <li>Ответы на вопросы: что чувствует партнёр, что скрывает, чего хочет</li>
+        <li>Потенциал союза и возможные трудности</li>
+        <li>Советы по действиям и развитию отношений</li>
+      </ul>
+    </div>
+
+    <div class="info-block">
+      <p>📝 Ответ в виде текста или фото расклада</p>
+      <p>⏱️ Готовность в течение 1 дня</p>
+      <p>₽ 1500</p>
+    </div>
+
+    <div class="extra-option">
+      <label class="switch-label">
+        <span>Получить голосовой ответ (+500 ₽)</span>
+        <label class="switch">
+          <input type="checkbox" id="voiceOption">
+          <span class="slider round"></span>
+        </label>
+      </label>
+    </div>
+
+    <button class="order-button" onclick="handleOrder()">Заказать</button>
+  </div>
+
+  <hr class="footer-line" />
+  <footer>
+    <p>© 2025 AstroWay</p>
+  </footer>
+
+  <script>
+    function handleOrder() {
+      const voice = document.getElementById('voiceOption').checked;
+      alert(voice
+        ? 'Вы выбрали голосовой ответ (+500 ₽). Форма заказа появится позже.'
+        : 'Форма заказа появится позже.');
+    }
+  </script>
+
+</body>
+</html>
