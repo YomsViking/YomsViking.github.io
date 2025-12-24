@@ -1,5 +1,5 @@
 (function () {
-  const BOT_NAME = 'YourBot'; // ← замени один раз
+  const BOT_NAME = 'YourOwnOracle_bot'; // ← замени один раз
 
   window.orderService = function (service, options = {}) {
     let payload = service;
