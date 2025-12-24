@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Расклад на будущее</title>
+  <link rel="stylesheet" href="subservice.css" />
+</head>
+<body>
+
+<header class="back-header">
+  <button class="back-button" onclick="history.back()">←</button>
+  <h1>Расклад на будущее</h1>
+</header>
+
+<div class="subservice-content">
+  <div class="subservice-description">
+    <ul>
+      <li>Прогноз развития ситуации</li>
+      <li>Основные события и тенденции</li>
+      <li>Возможные препятствия</li>
+      <li>Советы по подготовке</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <p>📝 Текстовый ответ + фото расклада</p>
+    <p>⏱️ До 1 дня</p>
+    <p>₽ 1200</p>
+  </div>
+
+  <button class="order-button" onclick="handleOrder()">Заказать</button>
+</div>
+
+<script>
+function handleOrder() {
+  window.location.href = 'https://t.me/YourBot?start=tarot_future';
+}
+</script>
+
+</body>
+</html>
