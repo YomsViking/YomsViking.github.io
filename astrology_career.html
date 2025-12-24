@@ -6,6 +6,7 @@
   <title>Астрология профессии</title>
   <link rel="stylesheet" href="subservice.css" />
 </head>
+  <script src="order.js"></script>
 <body>
 
 <header class="back-header">
@@ -29,14 +30,10 @@
     <p>₽ 2200</p>
   </div>
 
-  <button class="order-button" onclick="handleOrder()">Заказать</button>
+  <button class="order-button" onclick="orderService('astrology_career')">
+  Заказать
+</button>
 </div>
-
-<script>
-function handleOrder() {
-  window.location.href = 'https://t.me/YourBot?start=astrology_career';
-}
-</script>
 
 </body>
 </html>
