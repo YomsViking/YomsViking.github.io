@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ответ на вопрос</title>
+  <link rel="stylesheet" href="subservice.css" />
+</head>
+<body>
+
+<header class="back-header">
+  <button class="back-button" onclick="history.back()">←</button>
+  <h1>Ответ на вопрос</h1>
+</header>
+
+<div class="subservice-content">
+  <div class="subservice-description">
+    <ul>
+      <li>Чёткий ответ «да / нет» или развернутый анализ</li>
+      <li>Подходит для одного конкретного вопроса</li>
+      <li>Помогает принять решение</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <p>📝 Текстовый ответ</p>
+    <p>⏱️ В течение 24 часов</p>
+    <p>₽ 800</p>
+  </div>
+
+  <button class="order-button" onclick="handleOrder()">Заказать</button>
+</div>
+
+<script>
+function handleOrder() {
+  window.location.href = 'https://t.me/YourBot?start=tarot_question';
+}
+</script>
+
+</body>
+</html>
