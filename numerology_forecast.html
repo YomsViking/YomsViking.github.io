@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Прогноз по числам</title>
+  <link rel="stylesheet" href="subservice.css" />
+</head>
+<body>
+
+<header class="back-header">
+  <button class="back-button" onclick="history.back()">←</button>
+  <h1>Прогноз по числам</h1>
+</header>
+
+<div class="subservice-content">
+  <div class="subservice-description">
+    <ul>
+      <li>Прогноз на выбранный период</li>
+      <li>Основные тенденции и возможности</li>
+      <li>Благоприятные и напряжённые дни</li>
+      <li>Рекомендации для принятия решений</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <p>📝 Текстовый прогноз</p>
+    <p>⏱️ В течение 1 дня</p>
+    <p>₽ 1400</p>
+  </div>
+
+  <button class="order-button" onclick="handleOrder()">Заказать</button>
+</div>
+
+<script>
+function handleOrder() {
+  window.location.href = 'https://t.me/YourBot?start=numerology_forecast';
+}
+</script>
+
+</body>
+</html>
