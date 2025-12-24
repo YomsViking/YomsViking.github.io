@@ -40,7 +40,11 @@
       </label>
     </div>
 
-    <button class="order-button" onclick="handleOrder()">Заказать</button>
+    <button onclick="
+  orderService('tarot_relationships', {
+    voice: document.getElementById('voiceOption').checked
+  })
+">
   </div>
 
   <hr class="footer-line" />
@@ -48,17 +52,7 @@
     <p>© 2025 AstroWay</p>
   </footer>
 
-  <script>
-  function handleOrder() {
-    const voice = document.getElementById('voiceOption').checked;
-
-    const payload = voice
-      ? 'tarot_relationships_voice'
-      : 'tarot_relationships';
-
-    window.location.href = `https://t.me/YourBot?start=${payload}`;
-  }
-</script>
+<script src="order.js"></script>
 
 </body>
 </html>
