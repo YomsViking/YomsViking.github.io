@@ -31,21 +31,22 @@
     </div>
 
     <div class="extra-option">
-      <label class="switch-label">
-        <span>Ответ голосовым сообщением (+200 ₽)</span>
-        <label class="switch">
-          <input type="checkbox" id="voiceOption">
-          <span class="slider round"></span>
-        </label>
-      </label>
-    </div>
+  <label class="switch-label">
+    <span>Ответ голосовым сообщением (+200 ₽)</span>
+    <label class="switch">
+      <input type="checkbox" id="voiceOption">
+      <span class="slider round"></span>
+    </label>
+  </label>
+</div>
 
-    <button onclick="
+<button class="order-button" onclick="
   orderService('tarot_relationships', {
     voice: document.getElementById('voiceOption').checked
   })
 ">
-  </div>
+  Заказать
+</button>
 
   <hr class="footer-line" />
   <footer>
