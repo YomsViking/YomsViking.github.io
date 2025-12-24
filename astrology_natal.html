@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Натальная карта</title>
+  <link rel="stylesheet" href="subservice.css" />
+</head>
+<body>
+
+<header class="back-header">
+  <button class="back-button" onclick="history.back()">←</button>
+  <h1>Натальная карта</h1>
+</header>
+
+<div class="subservice-content">
+  <div class="subservice-description">
+    <ul>
+      <li>Анализ личности, сильных и слабых сторон</li>
+      <li>Предназначение и жизненные задачи</li>
+      <li>Таланты и точки роста</li>
+      <li>Рекомендации для гармоничного развития</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <p>📝 Подробный текстовый разбор</p>
+    <p>⏱️ Готовность в течение 2 дней</p>
+    <p>₽ 2500</p>
+  </div>
+
+  <button class="order-button" onclick="handleOrder()">Заказать</button>
+</div>
+
+<script>
+function handleOrder() {
+  window.location.href = 'https://t.me/YourBot?start=astrology_natal';
+}
+</script>
+
+</body>
+</html>
