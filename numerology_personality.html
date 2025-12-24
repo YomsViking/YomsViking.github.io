@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Число личности</title>
+  <link rel="stylesheet" href="subservice.css" />
+</head>
+<body>
+
+<header class="back-header">
+  <button class="back-button" onclick="history.back()">←</button>
+  <h1>Число личности</h1>
+</header>
+
+<div class="subservice-content">
+  <div class="subservice-description">
+    <ul>
+      <li>Как вас видят окружающие</li>
+      <li>Особенности характера и поведения</li>
+      <li>Сильные стороны в общении</li>
+      <li>Рекомендации для самореализации</li>
+    </ul>
+  </div>
+
+  <div class="info-block">
+    <p>📝 Текстовый разбор</p>
+    <p>⏱️ До 24 часов</p>
+    <p>₽ 1200</p>
+  </div>
+
+  <button class="order-button" onclick="handleOrder()">Заказать</button>
+</div>
+
+<script>
+function handleOrder() {
+  window.location.href = 'https://t.me/YourBot?start=numerology_personality';
+}
+</script>
+
+</body>
+</html>
