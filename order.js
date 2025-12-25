@@ -1,11 +1,17 @@
-(function () {
-  const BOT_NAME = 'TestBot'; // любое имя для теста
+const BOT_USERNAME = 'YourOwnOracle_bot';
+const BOT_ENABLED = true;
 
-  window.orderService = function (service, options = {}) {
-    let payload = service;
+function orderService(service, options = {}) {
+  if (!BOT_ENABLED) {
+    alert('Заказ временно недоступен');
+    return;
+  }
 
-    if (options.voice) payload += '_voice';
+  const params = new URLSearchParams({
+    service: service,
+    ...options
+  });
 
-    window.location.href = `https://t.me/${BOT_NAME}?start=${payload}`;
-  };
-})();
+  const url = `https://t.me/${BOT_USERNAME}?start=${params.toString()}`;
+  window.location.href = url;
+}
