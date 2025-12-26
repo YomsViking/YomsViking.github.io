@@ -1,17 +1,18 @@
-const BOT_USERNAME = 'YourOwnOracle_bot';
-const BOT_ENABLED = true;
-
 function orderService(service, options = {}) {
-  if (!BOT_ENABLED) {
-    alert('Заказ временно недоступен');
+  // Проверка, что сайт открыт внутри Telegram
+  if (!window.Telegram || !Telegram.WebApp) {
+    alert('Пожалуйста, откройте сайт через Telegram-бот');
     return;
   }
 
-  const params = new URLSearchParams({
+  const data = {
     service: service,
-    ...options
-  });
+    options: options
+  };
 
-  const url = `https://t.me/${BOT_USERNAME}?start=${params.toString()}`;
-  window.location.href = url;
+  // Отправляем данные боту
+  Telegram.WebApp.sendData(JSON.stringify(data));
+
+  // Закрываем WebApp
+  Telegram.WebApp.close();
 }
