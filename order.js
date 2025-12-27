@@ -10,12 +10,10 @@ function orderService(service, options = {}) {
     return;
   }
 
-  Telegram.WebApp.sendData(
-    JSON.stringify({
-      service: service,
-      options: options
-    })
-  );
+  Telegram.WebApp.sendData(JSON.stringify({
+    service,
+    options
+  }));
 
   Telegram.WebApp.close();
 }
