@@ -1,20 +1,17 @@
-alert('order.js LOADED');
+// order.js — полный рабочий вариант
+alert('order.js LOADED'); // временная проверка, убрать после теста
 
 function orderService(service, options = {}) {
-  alert(
-    'window.Telegram = ' + typeof window.Telegram +
-    '\nTelegram.WebApp = ' + typeof window.Telegram?.WebApp
-  );
-}
+  if (!window.Telegram || !Telegram.WebApp) {
+    alert('Пожалуйста, откройте сайт через Telegram-бот');
+    return;
+  }
 
   const data = {
     service: service,
     options: options
   };
 
-  // Отправляем данные боту
   Telegram.WebApp.sendData(JSON.stringify(data));
-
-  // Закрываем WebApp
   Telegram.WebApp.close();
 }
