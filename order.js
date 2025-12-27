@@ -1,3 +1,5 @@
+alert('order.js LOADED');
+
 function orderService(service, options = {}) {
   alert(
     'window.Telegram = ' + typeof window.Telegram +
