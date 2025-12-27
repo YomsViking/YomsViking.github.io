@@ -1,9 +1,9 @@
 function orderService(service, options = {}) {
-  // Проверка, что сайт открыт внутри Telegram
-  if (!window.Telegram || !Telegram.WebApp) {
-    alert('Пожалуйста, откройте сайт через Telegram-бот');
-    return;
-  }
+  alert(
+    'window.Telegram = ' + typeof window.Telegram +
+    '\nTelegram.WebApp = ' + typeof window.Telegram?.WebApp
+  );
+}
 
   const data = {
     service: service,
