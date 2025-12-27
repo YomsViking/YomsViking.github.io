@@ -1,15 +1,19 @@
+// order.js — отладочная версия
 function orderService(service, options = {}) {
+  if (!window.Telegram || !Telegram.WebApp) {
+    alert('Пожалуйста, откройте сайт через Telegram-бот');
+    return;
+  }
+
+  // Показываем, что кнопка сработала и WebApp доступен
   alert(
-    'window.Telegram = ' + typeof window.Telegram +
-    '\nTelegram.WebApp = ' + typeof window.Telegram?.WebApp
+    'Заказ готов к отправке!\n' +
+    'Service: ' + service + '\n' +
+    'window.Telegram = ' + typeof window.Telegram + '\n' +
+    'Telegram.WebApp = ' + typeof Telegram.WebApp
   );
-}
 
-  const data = {
-    service: service,
-    options: options
-  };
-
-  Telegram.WebApp.sendData(JSON.stringify(data));
-  Telegram.WebApp.close();
+  // Здесь можно раскомментировать для настоящей отправки
+  // Telegram.WebApp.sendData(JSON.stringify({ service, options }));
+  // Telegram.WebApp.close();
 }
